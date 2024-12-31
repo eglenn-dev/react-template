@@ -6,8 +6,8 @@ This is a template for a React project with TypeScript and SWC. It uses Vite wit
 
 There are two methods for deployment and they are both found here:
 
--   [Deploying a Static Site](https://vite.dev/guide/static-deploy)
--   [Deploying Vite / React App to GitHub Pages (Dev.to article)](https://dev.to/rashidshamloo/deploying-vite-react-app-to-github-pages-35hf)
+-   [Deploying a Static Site (vite.dev)](https://vite.dev/guide/static-deploy)
+-   [Deploying Vite / React App to GitHub Pages (dev.to)](https://dev.to/rashidshamloo/deploying-vite-react-app-to-github-pages-35hf)
 
 ## Deployment methods
 
