@@ -1,50 +1,37 @@
-# React + TypeScript + Vite
+# React + TS + SWC Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a template for a React project with TypeScript and SWC. It uses Vite with React, TypeScript, and SWC. Origionally made to make ti easier to start and deploy simple projects to GitHub Pages.
 
-Currently, two official plugins are available:
+## Resources
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+There are two methods for deployment and they are both found here:
 
-## Expanding the ESLint configuration
+-   [Deploying a Static Site](https://vite.dev/guide/static-deploy)
+-   [Deploying Vite / React App to GitHub Pages (Dev.to article)](https://dev.to/rashidshamloo/deploying-vite-react-app-to-github-pages-35hf)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Deployment methods
 
-- Configure the top-level `parserOptions` property like this:
+### Option 1: Using GitHub Actions
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1.  Create a new repository from this template, and clone the repo locally.
+2.  Go to the repository settings and enable GitHub Pages.
+3.  Set the correct base in `vite.config.js`, for example:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+    ```js
+    export default defineConfig({
+        base: "/<YOUR_REPO_NAME>/",
+        plugins: [react()],
+    });
+    ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+    -   If you are deploying to `https://<USERNAME>.github.io/` then set the base to `/`.
+    -   If you are deploying to `https://<USERNAME>.github.io/<REPO_NAME>/` then set the base to `/<REPO_NAME>/`.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+4.  In the repository settings under `Pages`, configure the 'Build and Deployment' source to use `GitHub Actions`.
+
+### Option 2: Using GitHub Pages CLI
+
+1. Clone the repo locally.
+2. Run `npm install` from the project root.
+3. Run `npm run deploy` to deploy the project to GitHub Pages.
+    - This is not an automatic deployment, you will need to run this command every time you want to deploy.
