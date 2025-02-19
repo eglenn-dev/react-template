@@ -1,6 +1,6 @@
-# React + TS + SWC Template
+# React w/ TypeScript
 
-This is a template for a React project with TypeScript and SWC. It uses Vite with React, TypeScript, and SWC. Origionally made to make ti easier to start and deploy simple projects to GitHub Pages.
+This is a template for a React project with TypeScript. It uses Vite with React, TypeScript, and SWC. Originally made to make it easier to start and deploy simple projects to GitHub Pages.
 
 ## Resources
 
@@ -32,6 +32,7 @@ There are two methods for deployment and they are both found here:
 ### Option 2: Using GitHub Pages CLI
 
 1. Clone the repo locally.
-2. Run `npm install` from the project root.
-3. Run `npm run deploy` to deploy the project to GitHub Pages.
+2. `cd <REPO_NAME>`
+3. Run `npm install`.
+4. Run `npm run deploy` to deploy the project to GitHub Pages.
     - This is not an automatic deployment, you will need to run this command every time you want to deploy.
